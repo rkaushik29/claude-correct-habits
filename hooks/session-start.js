@@ -46,6 +46,9 @@ const path = require('path');
 
 const PATTERNS_FILE = path.join(process.cwd(), '.claude', 'correct-habits', 'patterns.json');
 const PENDING_FILE = path.join(process.cwd(), '.claude', 'correct-habits', 'pending.json');
+const LAST_RESPONSE_FILE = path.join(process.cwd(), '.claude', 'correct-habits', 'last-response.json');
+
+const STATE_STALENESS_MS = 30 * 60 * 1000; // 30 minutes
 
 /**
  * Load patterns from the patterns file
@@ -67,6 +70,33 @@ function loadPending() {
     return JSON.parse(fs.readFileSync(PENDING_FILE, 'utf8'));
   }
   return [];
+}
+
+/**
+ * Clean up stale state files from previous sessions
+ * Removes last-response.json if it's older than 30 minutes
+ */
+function cleanupStaleState() {
+  if (!fs.existsSync(LAST_RESPONSE_FILE)) {
+    return;
+  }
+
+  try {
+    const data = JSON.parse(fs.readFileSync(LAST_RESPONSE_FILE, 'utf8'));
+    const timestamp = new Date(data.timestamp).getTime();
+    const now = Date.now();
+
+    if (now - timestamp > STATE_STALENESS_MS) {
+      fs.unlinkSync(LAST_RESPONSE_FILE);
+    }
+  } catch {
+    // If file is corrupted or unreadable, remove it
+    try {
+      fs.unlinkSync(LAST_RESPONSE_FILE);
+    } catch {
+      // Ignore deletion errors
+    }
+  }
 }
 
 /**
@@ -145,6 +175,9 @@ Please provide a quick code example for each:
  * @returns {void}
  */
 function main() {
+  // Clean up stale state from previous sessions
+  cleanupStaleState();
+
   const patternsData = loadPatterns();
   const pending = loadPending();
   
