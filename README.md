@@ -16,30 +16,11 @@
 
 </div>
 
-## The Problem
-
-Do you frequently correct Claude: *"No, we always use early returns here."*?
-
-Next session, Claude forgets. You correct it again. And again.
-
-## The Solution
-
-**Correct Habits** detects your corrections, extracts the pattern, and injects it into every future session.
-
-```
-You: "No, use async/await, never .then()"
-         ↓
-   Pattern saved
-         ↓
-Claude: Gets it right next time
-```
-
----
-
 ## Quick Start
 
 ```bash
-/plugin install github:rkaushik29/claude-correct-habits
+/plugin marketplace add rkaushik29/claude-correct-habits
+/plugin install correct-habits
 ```
 
 > Requires Claude Code v2.0.12+
