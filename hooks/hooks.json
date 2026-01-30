@@ -1,0 +1,15 @@
+
+{
+	"hooks": [
+		{
+		"event": "SessionStart",
+		"script": "./session-start.js",
+		"description": "Injects learned coding patterns into session context"
+		},
+		{
+		"event": "Stop",
+		"script": "./analyze-corrections.js", 
+		"description": "Analyzes session for corrections and extracts new patterns"
+		}
+	]
+}
