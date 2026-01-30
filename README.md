@@ -73,6 +73,7 @@ Claude: Gets it right next time
 ## Privacy
 
 All data stays local. No telemtry.
+
 ---
 
 <div align="center">
