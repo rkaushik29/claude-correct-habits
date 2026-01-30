@@ -18,9 +18,10 @@ const correctionSignals = [
   /instead\s*(of|use)/i,
   /wrong\s*(approach|pattern|way)/i,
   /our\s*(convention|standard|pattern|style)/i,
-  /should\s*(be|have|use)/i,
+  /should\s+(always\s+)?(be|have|use)/i,
   /fix\s*(this|that|the)/i,
   /i\s*(always|never|prefer)/i,
+  /(you\s+should|always\s+use|never\s+use)/i,
 ];
 
 function ensureDir(filePath) {
@@ -87,8 +88,12 @@ CORRECTION DETECTED: The user appears to be correcting your approach. After addr
 4. If it's NOT a reusable pattern (just a one-time fix), do NOT save anything.
 </pattern-learning-hook>`;
 
-  // Output the instruction to be added to Claude's context
-  console.log(instruction);
+  // Output JSON for Claude Code to inject into context
+  const hookOutput = {
+    context: instruction,
+    continue: true
+  };
+  console.log(JSON.stringify(hookOutput));
 }
 
 main();
