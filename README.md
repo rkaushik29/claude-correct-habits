@@ -18,7 +18,7 @@
 
 ## The Problem
 
-You correct Claude: *"No, we always use early returns here."*
+Do you frequently correct Claude: *"No, we always use early returns here."*?
 
 Next session, Claude forgets. You correct it again. And again.
 
@@ -42,7 +42,7 @@ Claude: Gets it right next time
 /plugin install github:rkaushik29/claude-correct-habits
 ```
 
-> Requires Claude Code v2.0.12+ and `ANTHROPIC_API_KEY`
+> Requires Claude Code v2.0.12+
 
 ---
 
@@ -72,8 +72,7 @@ Claude: Gets it right next time
 
 ## Privacy
 
-All data stays local. Pattern analysis uses your API quota. No telemetry.
-
+All data stays local. No telemtry.
 ---
 
 <div align="center">
