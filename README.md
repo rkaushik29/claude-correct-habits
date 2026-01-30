@@ -125,4 +125,4 @@ Patterns are stored locally at `.claude/correct-habits/patterns.json` in each pr
 
 ## License
 
-MIT
+[MIT](LICENSE)
