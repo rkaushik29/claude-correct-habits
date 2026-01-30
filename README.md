@@ -2,7 +2,7 @@
 
 # Correct Habits
 
-**Claude forgets. This plugin remembers.**
+**Claude forgets. This plugin helps it remember.**
 
 [![Claude Code](https://img.shields.io/badge/Claude_Code-Plugin-7c3aed)](https://docs.anthropic.com/en/docs/claude-code)
 [![License](https://img.shields.io/badge/License-MIT-22c55e)](LICENSE)
