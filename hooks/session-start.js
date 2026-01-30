@@ -7,9 +7,50 @@
 const fs = require('fs');
 const path = require('path');
 
+/**
+ * @typedef {'naming' | 'error-handling' | 'architecture' | 'testing' | 'style' | 'imports' | 'other'} PatternCategory
+ */
+
+/**
+ * @typedef {Object} Pattern
+ * @property {string} id - Unique identifier (e.g., "pat_1234567890_abc123")
+ * @property {string} name - Kebab-case name (e.g., "prefer-early-returns")
+ * @property {string} description - Clear, actionable description of the pattern
+ * @property {PatternCategory} category - Pattern category for grouping
+ * @property {string} [bad_example] - Code example showing what NOT to do
+ * @property {string} [good_example] - Code example showing the preferred approach
+ * @property {number} confidence - Confidence score 0-1
+ * @property {string} [reasoning] - Why this pattern was learned
+ * @property {string} createdAt - ISO date string
+ * @property {number} hitCount - Number of times this pattern was applied
+ */
+
+/**
+ * @typedef {Object} PatternsData
+ * @property {Pattern[]} patterns - Array of learned patterns
+ * @property {number} version - Schema version
+ */
+
+/**
+ * @typedef {Object} PendingPattern
+ * @property {string} name - Pattern name
+ * @property {string} description - Pattern description
+ * @property {string} [bad_example] - Known bad example
+ */
+
+/**
+ * @typedef {Object} HookOutput
+ * @property {string} context - Context to inject into the conversation
+ * @property {boolean} continue - Whether to continue processing
+ */
+
 const PATTERNS_FILE = path.join(process.cwd(), '.claude', 'correct-habits', 'patterns.json');
 const PENDING_FILE = path.join(process.cwd(), '.claude', 'correct-habits', 'pending.json');
 
+/**
+ * Load patterns from the patterns file
+ * @returns {PatternsData}
+ */
 function loadPatterns() {
   if (fs.existsSync(PATTERNS_FILE)) {
     return JSON.parse(fs.readFileSync(PATTERNS_FILE, 'utf8'));
@@ -17,6 +58,10 @@ function loadPatterns() {
   return { patterns: [], version: 1 };
 }
 
+/**
+ * Load pending patterns that need examples
+ * @returns {PendingPattern[]}
+ */
 function loadPending() {
   if (fs.existsSync(PENDING_FILE)) {
     return JSON.parse(fs.readFileSync(PENDING_FILE, 'utf8'));
@@ -24,16 +69,22 @@ function loadPending() {
   return [];
 }
 
+/**
+ * Format patterns as markdown for context injection
+ * @param {Pattern[]} patterns - Patterns to format
+ * @returns {string} Formatted markdown string
+ */
 function formatPatternsForContext(patterns) {
   if (patterns.length === 0) return '';
 
   // Group by category
+  /** @type {Record<string, Pattern[]>} */
   const byCategory = patterns.reduce((acc, p) => {
     const cat = p.category || 'other';
     if (!acc[cat]) acc[cat] = [];
     acc[cat].push(p);
     return acc;
-  }, {});
+  }, /** @type {Record<string, Pattern[]>} */ ({}));
 
   let output = `\n<learned_patterns priority="high">
 # User's Coding Patterns & Preferences
@@ -61,6 +112,11 @@ These patterns were learned from previous corrections. Follow them strictly.
   return output;
 }
 
+/**
+ * Format pending patterns as a prompt asking for examples
+ * @param {PendingPattern[]} pending - Pending patterns needing examples
+ * @returns {string} Formatted prompt string
+ */
 function formatPendingPrompt(pending) {
   if (pending.length === 0) return '';
 
@@ -84,6 +140,10 @@ Please provide a quick code example for each:
   return output;
 }
 
+/**
+ * Main entry point - loads patterns and outputs context for injection
+ * @returns {void}
+ */
 function main() {
   const patternsData = loadPatterns();
   const pending = loadPending();
