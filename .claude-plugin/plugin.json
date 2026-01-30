@@ -1,11 +1,10 @@
 {
-	"name": "learn-learn-bad-habits",
+	"name": "learn-bad-habits",
 	"version": "1.0.0",
-	"description": "Claude learns its Learn Bad Habits and prevents them from happening again.",
-	"author": "kaurohit",
+	"description": "Claude learns its bad habits and prevents them from happening again.",
+	"author": {
+		"name": "kaurohit"
+	},
 	"homepage": "https://github.com/rkaushik29/claude-learn-bad-habits",
-	"keywords": ["learn-bad-habits", "habits", "patterns", "learning", "self-learning", "corrections"],
-	"hooks": ["session-start", "stop"],
-	"commands": ["patterns", "add-pattern", "clear-patterns"],
-	"skills": ["pattern-aware"]
+	"keywords": ["learn-bad-habits", "habits", "patterns", "learning", "self-learning", "corrections"]
 }

@@ -18,7 +18,7 @@ This skill activates when:
 
 ## Process
 
-1. **Check for patterns file**: Read `~/.claude/pattern-guardian/patterns.json`
+1. **Check for patterns file**: Read `.claude/bad-habits/patterns.json` (in the current project directory)
 
 2. **Identify relevant patterns**: Based on the current task, find patterns that apply:
    - If writing a function → check naming, error-handling, style patterns

@@ -7,8 +7,8 @@
 const fs = require('fs');
 const path = require('path');
 
-const PATTERNS_FILE = path.join(process.env.HOME, '.claude', 'pattern-guardian', 'patterns.json');
-const PENDING_FILE = path.join(process.env.HOME, '.claude', 'pattern-guardian', 'pending.json');
+const PATTERNS_FILE = path.join(process.cwd(), '.claude', 'bad-habits', 'patterns.json');
+const PENDING_FILE = path.join(process.cwd(), '.claude', 'bad-habits', 'pending.json');
 
 function loadPatterns() {
   if (fs.existsSync(PATTERNS_FILE)) {

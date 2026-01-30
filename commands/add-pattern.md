@@ -32,7 +32,7 @@ You are helping the user manually add a coding pattern to the Learn Bad Habits m
    Save this pattern? (yes/no)
    ```
 
-5. If confirmed, append to `~/.claude/pattern-guardian/patterns.json`:
+5. If confirmed, append to `.claude/bad-habits/patterns.json` (in the current project directory):
 
 ```javascript
 const pattern = {
@@ -49,7 +49,7 @@ const pattern = {
 };
 ```
 
-6. Create the directory if it doesn't exist: `mkdir -p ~/.claude/pattern-guardian`
+6. Create the directory if it doesn't exist: `mkdir -p .claude/bad-habits`
 
 7. Read existing file, parse JSON, push new pattern, write back
 
