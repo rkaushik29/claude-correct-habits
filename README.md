@@ -18,6 +18,8 @@
 
 ## Quick Start
 
+Run individually:
+
 ```bash
 /plugin marketplace add rkaushik29/claude-correct-habits
 /plugin install correct-habits
