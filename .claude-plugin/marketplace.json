@@ -1,0 +1,27 @@
+{
+	"name": "correct-habits",
+	"displayName": "Correct Habits",
+	"version": "1.0.0",
+	"description": "Claude learns from corrections and remembers your coding preferences.",
+	"author": {
+		"name": "kaurohit",
+		"github": "rkaushik29"
+	},
+	"repository": "https://github.com/rkaushik29/claude-correct-habits",
+	"homepage": "https://github.com/rkaushik29/claude-correct-habits",
+	"license": "MIT",
+	"keywords": [
+		"claude-code",
+		"claude-plugin",
+		"correct-habits",
+		"habits",
+		"patterns",
+		"learning",
+		"corrections",
+		"preferences",
+		"memory",
+		"code-style"
+	],
+	"minClaudeVersion": "2.0.12",
+	"category": "developer-tools"
+}
