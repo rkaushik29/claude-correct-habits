@@ -1,4 +1,4 @@
-# Claude - Learn Bad Habits
+# Claude - Correct Habits
 
 A Claude Code plugin that automatically learns your coding patterns from corrections and enforces them in future sessions.
 
@@ -13,16 +13,16 @@ A Claude Code plugin that automatically learns your coding patterns from correct
 
 ```bash
 # Install directly from GitHub
-/plugin install github:rkaushik29/claude-bad-habits
+/plugin install github:rkaushik29/claude-correct-habits
 ```
 
 Or for local development:
 ```bash
 # Clone to your plugins directory
-git clone https://github.com/rkaushik29/claude-bad-habits ~/.claude/plugins/learn-bad-habits
+git clone https://github.com/rkaushik29/claude-correct-habits ~/.claude/plugins/correct-habits
 
 # Test with plugin-dir flag
-claude --plugin-dir ~/.claude/plugins/learn-bad-habits
+claude --plugin-dir ~/.claude/plugins/correct-habits
 ```
 
 ## Requirements
@@ -52,7 +52,7 @@ claude --plugin-dir ~/.claude/plugins/learn-bad-habits
 
 ## Data Storage
 
-Patterns are stored in `.claude/bad-habits/patterns.json` (per-project):
+Patterns are stored in `.claude/correct-habits/patterns.json` (per-project):
 
 ```json
 {

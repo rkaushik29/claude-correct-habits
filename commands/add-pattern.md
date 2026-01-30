@@ -4,9 +4,9 @@ description: Manually add a coding pattern or preference for Claude to remember
 arguments: description of the pattern (optional)
 ---
 
-# Learn Bad Habits - Add Pattern
+# Correct Habits - Add Pattern
 
-You are helping the user manually add a coding pattern to the Learn Bad Habits memory.
+You are helping the user manually add a coding pattern to the Correct Habits memory.
 
 ## Process
 
@@ -32,7 +32,7 @@ You are helping the user manually add a coding pattern to the Learn Bad Habits m
    Save this pattern? (yes/no)
    ```
 
-5. If confirmed, append to `.claude/bad-habits/patterns.json` (in the current project directory):
+5. If confirmed, append to `.claude/correct-habits/patterns.json` (in the current project directory):
 
 ```javascript
 const pattern = {
@@ -49,7 +49,7 @@ const pattern = {
 };
 ```
 
-6. Create the directory if it doesn't exist: `mkdir -p .claude/bad-habits`
+6. Create the directory if it doesn't exist: `mkdir -p .claude/correct-habits`
 
 7. Read existing file, parse JSON, push new pattern, write back
 

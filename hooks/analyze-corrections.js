@@ -7,7 +7,7 @@
 const fs = require('fs');
 const path = require('path');
 
-const PATTERNS_FILE = path.join(process.cwd(), '.claude', 'bad-habits', 'patterns.json');
+const PATTERNS_FILE = path.join(process.cwd(), '.claude', 'correct-habits', 'patterns.json');
 
 // Correction signals to look for
 const correctionSignals = [
@@ -77,7 +77,7 @@ CORRECTION DETECTED: The user appears to be correcting your approach. After addr
    - NOT patterns: typo fixes, one-time bug fixes, project-specific implementation details
 
 2. If it IS a reusable pattern with confidence > 0.7:
-   - Use the Write tool to save it to: .claude/bad-habits/patterns.json (in the current project directory)
+   - Use the Write tool to save it to: .claude/correct-habits/patterns.json (in the current project directory)
    - File format: {"patterns": [...], "version": 1}
    - Pattern fields: id (pat_timestamp_random), name (kebab-case), description, category (naming|error-handling|architecture|testing|style|imports|other), bad_example, good_example, confidence (0-1), createdAt (ISO), hitCount (0)
    - Check for duplicates first - existing patterns: ${patternNames}

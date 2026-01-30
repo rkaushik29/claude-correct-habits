@@ -4,13 +4,13 @@ description: Clear all or specific learned coding patterns from memory
 arguments: pattern name or "all" (optional)
 ---
 
-# Learn Bad Habits - Clear Patterns
+# Correct Habits - Clear Patterns
 
-You are helping the user clear learned coding patterns from the Learn Bad Habits memory.
+You are helping the user clear learned coding patterns from the Correct Habits memory.
 
 ## Process
 
-1. Read the current patterns from `.claude/bad-habits/patterns.json` (in the current project directory)
+1. Read the current patterns from `.claude/correct-habits/patterns.json` (in the current project directory)
 
 2. If the file doesn't exist or is empty, inform the user: "No patterns stored yet."
 

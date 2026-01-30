@@ -4,16 +4,16 @@ description: View, search, and manage your learned coding patterns
 arguments: action (list|search|remove|export)
 ---
 
-# Learn Bad Habits - Pattern Management
+# Correct Habits - Pattern Management
 
-You are helping the user manage their learned coding patterns stored by the Learn Bad Habits plugin.
+You are helping the user manage their learned coding patterns stored by the Correct Habits plugin.
 
 ## Available Actions
 
 Based on `$ARGUMENTS`:
 
 ### `list` (default)
-Read the patterns file at `.claude/bad-habits/patterns.json` (in the current project directory) and display all patterns in a readable format:
+Read the patterns file at `.claude/correct-habits/patterns.json` (in the current project directory) and display all patterns in a readable format:
 - Group by category
 - Show name, description, and examples
 - Include hit count and when it was learned
@@ -29,7 +29,7 @@ Export all patterns as a markdown file that could be added to CLAUDE.md
 
 ## Instructions
 
-1. Read the patterns file: `.claude/bad-habits/patterns.json`
+1. Read the patterns file: `.claude/correct-habits/patterns.json`
 2. Parse the JSON and perform the requested action
 3. Format output clearly for the user
 4. If the file doesn't exist, inform the user no patterns have been learned yet

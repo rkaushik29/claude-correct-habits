@@ -1,10 +1,10 @@
 {
-	"name": "learn-bad-habits",
+	"name": "correct-habits",
 	"version": "1.0.0",
-	"description": "Claude learns its bad habits and prevents them from happening again.",
+	"description": "Claude learns from corrections and remembers your coding preferences.",
 	"author": {
 		"name": "kaurohit"
 	},
-	"homepage": "https://github.com/rkaushik29/claude-bad-habits",
-	"keywords": ["learn-bad-habits", "habits", "patterns", "learning", "self-learning", "corrections"]
+	"homepage": "https://github.com/rkaushik29/claude-correct-habits",
+	"keywords": ["correct-habits", "habits", "patterns", "learning", "corrections", "preferences"]
 }

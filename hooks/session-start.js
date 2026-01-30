@@ -1,14 +1,14 @@
 #!/usr/bin/env node
 /**
- * Learn Bad Habits - Session Start Hook
+ * Correct Habits - Session Start Hook
  * Injects learned patterns as high-priority context and handles pending examples
  */
 
 const fs = require('fs');
 const path = require('path');
 
-const PATTERNS_FILE = path.join(process.cwd(), '.claude', 'bad-habits', 'patterns.json');
-const PENDING_FILE = path.join(process.cwd(), '.claude', 'bad-habits', 'pending.json');
+const PATTERNS_FILE = path.join(process.cwd(), '.claude', 'correct-habits', 'patterns.json');
+const PENDING_FILE = path.join(process.cwd(), '.claude', 'correct-habits', 'pending.json');
 
 function loadPatterns() {
   if (fs.existsSync(PATTERNS_FILE)) {
