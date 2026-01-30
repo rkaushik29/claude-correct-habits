@@ -6,7 +6,20 @@
 		"name": "kaurohit"
 	},
 	"homepage": "https://github.com/rkaushik29/claude-correct-habits",
-	"keywords": ["correct-habits", "habits", "patterns", "learning", "corrections", "preferences"],
+	"keywords": [
+		"claude-code",
+		"claude-plugin",
+		"claude-code-plugin",
+		"correct-habits",
+		"habits",
+		"patterns",
+		"learning",
+		"corrections",
+		"preferences",
+		"memory",
+		"code-style",
+		"developer-tools"
+	],
 	"hooks": {
 		"SessionStart": [
 			{
