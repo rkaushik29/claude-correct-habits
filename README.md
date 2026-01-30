@@ -55,7 +55,7 @@ Run individually:
 
 ## Privacy
 
-All data stays local. No telemtry.
+All data stays local. No telemetry.
 
 ---
 
