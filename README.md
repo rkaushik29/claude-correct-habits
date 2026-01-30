@@ -13,13 +13,13 @@ A Claude Code plugin that automatically learns your coding patterns from correct
 
 ```bash
 # Install directly from GitHub
-/plugin install github:rkaushik29/bad-habits
+/plugin install github:rkaushik29/claude-bad-habits
 ```
 
 Or for local development:
 ```bash
 # Clone to your plugins directory
-git clone https://github.com/rkaushik29/bad-habits ~/.claude/plugins/learn-bad-habits
+git clone https://github.com/rkaushik29/claude-bad-habits ~/.claude/plugins/learn-bad-habits
 
 # Test with plugin-dir flag
 claude --plugin-dir ~/.claude/plugins/learn-bad-habits
